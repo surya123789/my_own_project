@@ -1,0 +1,11 @@
+connecting to slave machine
+1.Generate the sshkey on the master machine
+2.Copy the public ssh key
+3.Paste it in slave machine in the authorised keys
+4.Give Chmod 600 permission to authorised keys && 700 to .ssh
+5.Add slave user to the visuo file
+6.Enable password authutication in the sshd_config file
+7.Now restart the sshd service and ssh also
+8.Give Java and Maven path locations
+9.Give chmod 777 to the remote directory in the slave machine
+10.Now launch the agent
