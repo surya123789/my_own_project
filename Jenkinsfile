@@ -49,7 +49,7 @@ pipeline {
                              }
         stage('uploading artifacts to JFROG(artifactory repo)') {
             agent { label 'Build' }
-            step {
+            steps {
                 rtUpload (
                     serverId: 'artifactory-server',
                     spec: '''{
@@ -74,7 +74,7 @@ pipeline {
         }
         stage('Downloading artifactory from JFROG(artifactory repo)') {
             agent { label 'Docker' }
-            step {
+            steps {
                 rtDownload (
                     serverId: 'artifactory-server',
                     spec: '''{
