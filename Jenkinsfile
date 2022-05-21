@@ -55,8 +55,8 @@ pipeline {
                     spec: '''{
                         "files": [
                             {
-                            "pattern": "target/**.war",
-                            "target": "maven/"
+                            "pattern": "maven/**.war",
+                            "target": "/home/ubuntu/surya/"
                             }
                         ]
                      }''',
