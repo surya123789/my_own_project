@@ -24,18 +24,18 @@ pipeline {
 }
   
 // No need to occupy a node
-        stage("Quality Gate"){
-            agent { label 'Build' }
-            steps {
-               script {
-                 timeout(time: 10, unit: 'MINUTES') { // Just in case something goes wrong, pipeline will be killed after a timeout
-                    def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-                    if (qg.status != 'OK') {
-                         error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                                           }
-                                                    }
-                     }
-                 }
+  //      stage("Quality Gate"){
+   //         agent { label 'Build' }
+   //         steps {
+   //            script {
+    //             timeout(time: 10, unit: 'MINUTES') { // Just in case something goes wrong, pipeline will be killed after a timeout
+     //               def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+      //              if (qg.status != 'OK') {
+        //                 error "Pipeline aborted due to quality gate failure: ${qg.status}"
+         //                                 }
+           //                                         }
+              //       }
+             //    }
                              }
         stage('uploading artifacts to JFROG(artifactory repo)') {
             agent { label 'Build' }
