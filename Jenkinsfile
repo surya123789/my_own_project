@@ -11,19 +11,9 @@ pipeline {
         stage('Build') {
             agent { label 'Build' }
             steps {
-                sh 'mvn install -Dmaven.test.skip=true'
+                sh 'mvn install'
             }
         }
-		
-        stage('Unit Tests') {
-            agent { label 'Build' }
-            steps {
-                sh 'mvn compiler:testCompile'
-                sh 'mvn surefire:test'
-                junit 'target/**/*.xml'
-            }
-        }
-        
         stage('SonarQube analysis') {
             agent { label 'Build' }
             steps {
