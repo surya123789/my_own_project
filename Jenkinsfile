@@ -26,7 +26,7 @@ pipeline {
             agent { label 'Build' }
             steps {
                 rtUpload (
-                    serverId: 'artifactory-server',
+                    serverId: 'artifactoryserver',
                     spec: '''{
                         "files": [
                             {
@@ -51,7 +51,7 @@ pipeline {
             agent { label 'Docker' }
             steps {
                 rtDownload (
-                    serverId: 'artifactory-server',
+                    serverId: 'artifactoryserver',
                     spec: '''{
                         "files": [
                             {
