@@ -107,7 +107,7 @@ pipeline {
   	stage('create container') {
 			agent { label 'Docker' }
            steps {
-				     sh 'sudo docker run -it -d --name mydocker1 -p 8080:8080 surya123789/pipeline:latest'
+				     sh 'sudo docker run -it -d --name mydocker1 -p 8080:8080 surya123789/my_own_project:latest'
 			                  }
 	    	}
  }
