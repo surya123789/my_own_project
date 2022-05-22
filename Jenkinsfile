@@ -110,5 +110,12 @@ pipeline {
 				     sh 'sudo docker run -it -d --name mydocker1 -p 8080:8080 surya123789/my_own_project:latest'
 			                  }
 	    	}
+	stage('Deploy App') {
+           steps {
+              script {
+                kubernetesDeploy(configs: "deploy.yml", kubeconfigId: "kubernetes")
+        }
+      }
+    }
  }
 }
