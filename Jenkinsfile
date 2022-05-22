@@ -105,7 +105,7 @@ pipeline {
 			                  }
 	    	}
 	stage('Deploy App') {
-		agent { label 'master' }
+		agent { label 'Build' }
            steps {
               script {
                 kubernetesDeploy(configs: "deploy.yml", kubeconfigId: "kubernetes")
