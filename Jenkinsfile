@@ -108,7 +108,7 @@ pipeline {
 		agent { label 'Build' }
            steps {
               script {
-                kubernetesDeploy(configs: "deploy.yml", kubeconfigId: "kubernetes")
+                kubernetesDeploy(configs: "deploy.yml", kubeconfigId: "kubernetes", enableConfigSubstitution: true)
         }
       }
     }
