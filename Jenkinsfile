@@ -56,7 +56,7 @@ pipeline {
                         "files": [
                             {
                             "pattern": "maven/**.war",
-                            "target": "/home/ubuntu/surya/"
+                            "target": "/home/ubuntu/surya/workspace/my_own_project/"
                             }
                         ]
                      }''',
