@@ -72,6 +72,11 @@ pipeline {
 )
             }
         }
+	    	stage('ansible for configuring server') {
+	            agent { label 'ansible-master' }
+                          steps {
+				      sh 'ansible-playbook -i playbook.yaml'
+			                  }
         stage('Git-checkout-docker ') {
             agent { label 'Docker' }
             steps {
@@ -104,7 +109,8 @@ pipeline {
 				      sh 'docker pull surya123789/my_own_project:latest'
 			                  }
 	    	}
-	stage('Deploy App') {
+	   
+	    	}	stage('Deploy App') {
 		agent { label 'Build' }
            steps {
               script {
